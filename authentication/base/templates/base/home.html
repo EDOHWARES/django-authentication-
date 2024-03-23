@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+    .body {
+        background-color: rgb(237, 234, 222);
+    }
+
+    .hd {
+        text-align: center;
+        color: grey;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+
+    }
+
+    .container .cont {
+        margin-bottom: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .cont .q {
+        background-color: white;
+        padding: .5rem 1rem;
+        color: gray;
+        border: 1px solid black;
+    }
+
+    .cont .h {
+        background-color: bisque;
+        padding: 2rem 1rem;
+        font-weight: normal;
+        border: 1px solid black;
+    }
+</style>
+
+<section class="body">
+<div class="container">
+<div class="hd">
+<h1>Eavesdrop Into The Tech Interview Questions</h1>
+<small>Stop searching. Start hiring with Robert Half.</small>
+</div>
+{% for question in questions  %}
+<div class="co">
+    <div class="cont">
+        <h3 class="q">{{question.id}}. {{question.question}}</h3>
+        <h5 class="h">{{question.hint}}</h5>
+    </div>
+</div>
+{% endfor %}
+</div>
+</section>
+    
+{% endblock content %}
